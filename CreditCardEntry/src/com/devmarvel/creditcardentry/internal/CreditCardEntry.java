@@ -182,6 +182,10 @@ public class CreditCardEntry extends HorizontalScrollView implements
 		updateCardImage(false);
 	}
 
+	public void setDisabled() {
+		creditCardText.setEnabled(false);
+	}
+
 	@Override
 	public void onCreditCardNumberValid() {
     nextField(this.creditCardText);

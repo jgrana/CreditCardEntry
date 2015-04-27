@@ -122,6 +122,25 @@
             app:include_security="false"
             app:include_zip="true"/>
 
+        <TextView
+            android:id="@+id/disabled_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Form disabled"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
+
+        <com.devmarvel.creditcardentry.library.CreditCardForm
+            android:id="@+id/disabled_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:include_exp="false"
+            app:include_helper="false"
+            app:include_security="false"
+            app:include_zip="true"
+            app:enabled="false"/>
     </LinearLayout>
 </ScrollView>
 

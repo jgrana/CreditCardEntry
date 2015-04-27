@@ -25,6 +25,7 @@ public class CreditCardForm extends RelativeLayout {
 	private int textHelperColor;
 	private Drawable inputBackground;
 	private String cardNumberHint = "1234 5678 9012 3456";
+	private boolean enabled = true;
 
 	public CreditCardForm(Context context) {
 		this(context, null);
@@ -56,6 +57,7 @@ public class CreditCardForm extends RelativeLayout {
 					this.includeSecurity 	= typedArray.getBoolean(R.styleable.CreditCardForm_include_security, true);
 					this.includeZip 			= typedArray.getBoolean(R.styleable.CreditCardForm_include_zip, true);
 					this.includeHelper 		= typedArray.getBoolean(R.styleable.CreditCardForm_include_helper, true);
+					this.enabled 		= typedArray.getBoolean(R.styleable.CreditCardForm_enabled, true);
 					this.textHelperColor 	= typedArray.getColor(R.styleable.CreditCardForm_helper_text_color, getResources().getColor(R.color.text_helper_color));
 					this.inputBackground 	= typedArray.getDrawable(R.styleable.CreditCardForm_input_background);
 				} finally {
@@ -124,7 +126,9 @@ public class CreditCardForm extends RelativeLayout {
 		entry.setCardImageView(cardFrontImage);
 		entry.setBackCardImage(cardBackImage);
 		entry.setCardNumberHint(cardNumberHint);
-
+		if (!enabled) {
+			entry.setDisabled();
+		}
 		this.addView(layout);
 
 		// set up optional helper text view
