@@ -214,4 +214,14 @@ public class CreditCardForm extends RelativeLayout {
 	public void setCardNumber(String cardNumber, boolean focusNextField) {
 		entry.setCardNumber(cardNumber, focusNextField);
 	}
+
+	/**
+	 * @param enabled the card number to show
+	 */
+	public void setEnabled(boolean enabled) {
+		if (!enabled) {
+			entry.setDisabled();
+		}
+	}
+
 }

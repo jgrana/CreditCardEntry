@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
 		disabledForm.setOnCardValidCallback(cardValidCallback);
 		// populate the card, but don't try to focus the next field
 		disabledForm.setCardNumber("4242 4242 4242 4242", false);
+		disabledForm.setEnabled(false);
 	}
 
 }

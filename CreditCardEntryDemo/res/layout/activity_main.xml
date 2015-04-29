@@ -140,7 +140,7 @@
             app:include_helper="false"
             app:include_security="false"
             app:include_zip="true"
-            app:enabled="false"/>
+            />
     </LinearLayout>
 </ScrollView>
 
