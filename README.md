@@ -38,7 +38,7 @@ Add the project to your `dependencies`
 
         ...
 
-        compile 'com.github.dbachelder:CreditCardEntry:v1.2.1'
+        compile 'com.github.dbachelder:CreditCardEntry:v1.2.3'
     }
 ```
 
@@ -66,6 +66,7 @@ XML
  * `app:include_security` - boolean to show/hide the security code in the form (`true` by default (i.e. security is shown))
  * `app:card_number_hint` - string to put in as a placeholder (hint) in the credit card number field
  * `app:input_background` - the drawable to use as a background (defaults to white square with black 1px border)
+ * `app:enabled` - boolean to enabled/disabled the form (`true` by default)
 
 
 In code:
