@@ -2,8 +2,11 @@ package com.devmarvel.creditcardentry.fields;
 
 import android.R.color;
 import android.content.Context;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
+import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -25,8 +28,9 @@ public abstract class CreditEntryFieldBase extends EditText implements
 
 	CreditCardFieldDelegate delegate;
 	final Context context;
-	
-	private boolean valid = false;
+    String lastValue = null;
+
+    private boolean valid = false;
 
 	public CreditEntryFieldBase(Context context) {
 		super(context);
@@ -40,8 +44,7 @@ public abstract class CreditEntryFieldBase extends EditText implements
 		init();
 	}
 
-	public CreditEntryFieldBase(Context context, AttributeSet attrs,
-			int defStyle) {
+	public CreditEntryFieldBase(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		this.context = context;
 		init();
@@ -55,7 +58,7 @@ public abstract class CreditEntryFieldBase extends EditText implements
 		addTextChangedListener(this);
 		setOnKeyListener(this);
 		setOnClickListener(this);
-		setPadding(20,0,20,0);
+		setPadding(20, 0, 20, 0);
 	}
 
 	@Override
@@ -64,8 +67,16 @@ public abstract class CreditEntryFieldBase extends EditText implements
 			if (delegate != null) {
 				delegate.focusOnPreviousField(this);
 			}
-		}
+		} else if(!String.valueOf(s).equals(String.valueOf(lastValue))) {
+            lastValue = String.valueOf(s);
+            textChanged(s, start, before, end);
+        }
 	}
+
+    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+    @Override public void afterTextChanged(Editable s) {}
+
+    public void textChanged(CharSequence s, int start, int before, int end) { }
 
 	@Override
 	public InputConnection onCreateInputConnection(@NonNull EditorInfo outAttrs) {
@@ -126,8 +137,33 @@ public abstract class CreditEntryFieldBase extends EditText implements
 		}
 	}
 
-	private class BackInputConnection extends InputConnectionWrapper {
+    @Override
+    public Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("instanceState", super.onSaveInstanceState());
+        boolean focus = hasFocus();
+        bundle.putBoolean("focus", focus);
+        String value = String.valueOf(this.getText());
+        bundle.putString("stateToSave", value);
+        return bundle;
+    }
 
+	@Override
+    public void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            state = bundle.getParcelable("instanceState");
+            super.onRestoreInstanceState(state);
+            String cc = bundle.getString("stateToSave");
+            setText(cc);
+            boolean focus = bundle.getBoolean("focus", false);
+            if(focus) requestFocus();
+        } else {
+            super.onRestoreInstanceState(state);
+        }
+    }
+
+    private class BackInputConnection extends InputConnectionWrapper {
 		public BackInputConnection(InputConnection target) {
 			super(target, false);
 		}

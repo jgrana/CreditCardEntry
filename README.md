@@ -2,6 +2,7 @@ CreditCardEntry
 =========
 
 [![Join the chat at https://gitter.im/dbachelder/CreditCardEntry](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dbachelder/CreditCardEntry?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CreditCardEntry-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1771)
 
 # Introduction
 
@@ -38,7 +39,7 @@ Add the project to your `dependencies`
 
         ...
 
-        compile 'com.github.dbachelder:CreditCardEntry:1.0.1'
+        compile 'com.github.dbachelder:CreditCardEntry:v1.3.0'
     }
 ```
 
@@ -62,6 +63,8 @@ XML
  * `app:helper_text_color` - change the text color of the hints that appear below the widget by default.
  * `app:include_helper` - boolean to show/hide the helper text under the widget (`true` by default (i.e. helper is shown))
  * `app:include_zip` - boolean to show/hide the zip code in the form (`true` by default (i.e. zip is shown))
+ * `app:include_exp` - boolean to show/hide the exp in the form (`true` by default (i.e. exp is shown))
+ * `app:include_security` - boolean to show/hide the security code in the form (`true` by default (i.e. security is shown))
  * `app:card_number_hint` - string to put in as a placeholder (hint) in the credit card number field
  * `app:input_background` - the drawable to use as a background (defaults to white square with black 1px border)
 
@@ -108,9 +111,30 @@ In code:
 
 # Version History
 
+###5/16/2015
+ - use an animator to do the scroll
+
+###5/14/2015
+ - don't call complete callback twice
+
+###5/13/2015
+ - add setters for other CC fields
+ - correctly manage state such that more than one form on a screen can handle state change
+
+###5/11/2015
+ - Added clearForm()
+
+###4/27/2015
+ - removed a bunch of dead resources reducing aar size by ~17%
+
+###4/26/2015
+ - fixed corner radius of card back
+ - allow setting an invalid number programmatically
+
 ###4/24/2015
  - Done IME causes validation check and keyboard dismiss
  - All fields except credit card # are now optional
+ - Allow setting credit card number programmatically
 
 ###4/21/2015
  - Don't focus credit card by default. Add mechanism for clients to focus any field if desired.
