@@ -200,7 +200,11 @@ public class CreditCardEntry extends HorizontalScrollView implements
     @Override
     public void onCardTypeChange(CardType type) {
         cardImage.setImageResource(type.frontResource);
-        backCardImage.setImageResource(type.backResource);
+        if (type == CardType.AMEX) {
+            backCardImage.setImageResource(type.amexBackResource);
+        } else {
+            backCardImage.setImageResource(type.backResource);
+        }
         updateCardImage(false);
     }
 
