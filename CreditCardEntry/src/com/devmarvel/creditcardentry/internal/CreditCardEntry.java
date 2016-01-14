@@ -302,7 +302,7 @@ public class CreditCardEntry extends HorizontalScrollView implements
         field.requestFocus();
         if(!scrolling) {
             scrolling = true;
-            scrollToTarget(field instanceof CreditCardText ? 0 : field.getLeft(), new Runnable() {
+            scrollToTarget(field instanceof CreditCardText ? 0 : field.getRight(), new Runnable() {
                 @Override
                 public void run() {
                     scrolling = false;
