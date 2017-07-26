@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.internal;
+package com.ifiok.cardentry.internal;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;

@@ -1,10 +1,10 @@
-package com.devmarvel.creditcardentry.fields;
+package com.ifiok.cardentry.fields;
 
 import android.content.Context;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 
-import com.devmarvel.creditcardentry.R;
+import com.ifiok.cardentry.R;
 
 public class ZipCodeText extends CreditEntryFieldBase {
 

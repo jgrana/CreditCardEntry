@@ -1,11 +1,11 @@
-package com.devmarvel.creditcardentry.fields;
+package com.ifiok.cardentry.fields;
 
 import android.content.Context;
 import android.text.Editable;
 import android.util.AttributeSet;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.internal.CreditCardUtil;
+import com.ifiok.cardentry.R;
+import com.ifiok.cardentry.internal.CreditCardUtil;
 
 public class ExpDateText extends CreditEntryFieldBase {
 

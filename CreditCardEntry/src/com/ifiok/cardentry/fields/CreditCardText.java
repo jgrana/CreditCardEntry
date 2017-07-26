@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.fields;
+package com.ifiok.cardentry.fields;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.internal.CreditCardUtil;
-import com.devmarvel.creditcardentry.library.CardType;
+import com.ifiok.cardentry.R;
+import com.ifiok.cardentry.internal.CreditCardUtil;
+import com.ifiok.cardentry.library.CardType;
 
 public class CreditCardText extends CreditEntryFieldBase {
 

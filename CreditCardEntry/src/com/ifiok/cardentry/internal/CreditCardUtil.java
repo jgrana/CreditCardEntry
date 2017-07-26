@@ -1,9 +1,8 @@
-package com.devmarvel.creditcardentry.internal;
+package com.ifiok.cardentry.internal;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
-import com.devmarvel.creditcardentry.library.CardType;
+import com.ifiok.cardentry.library.CardType;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

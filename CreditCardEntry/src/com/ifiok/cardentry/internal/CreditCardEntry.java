@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.internal;
+package com.ifiok.cardentry.internal;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,15 +37,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.fields.CreditCardText;
-import com.devmarvel.creditcardentry.fields.CreditEntryFieldBase;
-import com.devmarvel.creditcardentry.fields.ExpDateText;
-import com.devmarvel.creditcardentry.fields.SecurityCodeText;
-import com.devmarvel.creditcardentry.fields.ZipCodeText;
-import com.devmarvel.creditcardentry.library.CardType;
-import com.devmarvel.creditcardentry.library.CardValidCallback;
-import com.devmarvel.creditcardentry.library.CreditCard;
+import com.ifiok.cardentry.R;
+import com.ifiok.cardentry.fields.CreditCardText;
+import com.ifiok.cardentry.fields.CreditEntryFieldBase;
+import com.ifiok.cardentry.fields.ExpDateText;
+import com.ifiok.cardentry.fields.SecurityCodeText;
+import com.ifiok.cardentry.fields.ZipCodeText;
+import com.ifiok.cardentry.library.CardType;
+import com.ifiok.cardentry.library.CardValidCallback;
+import com.ifiok.cardentry.library.CreditCard;
 
 import java.util.ArrayList;
 import java.util.HashMap;

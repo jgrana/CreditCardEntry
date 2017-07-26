@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.library;
+package com.ifiok.cardentry.library;
 
 public interface CardValidCallback {
   /**

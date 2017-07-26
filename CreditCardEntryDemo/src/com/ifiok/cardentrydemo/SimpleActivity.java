@@ -1,13 +1,13 @@
-package com.devmarvel.creditcardentrydemo;
+package com.ifiok.cardentrydemo;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.devmarvel.creditcardentry.library.CardValidCallback;
-import com.devmarvel.creditcardentry.library.CreditCard;
-import com.devmarvel.creditcardentry.library.CreditCardForm;
+import com.ifiok.cardentry.library.CardValidCallback;
+import com.ifiok.cardentry.library.CreditCard;
+import com.ifiok.cardentry.library.CreditCardForm;
 
 public class SimpleActivity extends Activity {
 	private static final String TAG = "SimpleActivity";
