@@ -121,6 +121,9 @@ public class CreditCardUtil {
 			segmentLengths[2] = 0;
 			gaps.add(" ");
 			break;
+		case PAYSTACK_PIN_ONLY:
+		case PAYSTACK_PIN_OTP:
+		case PAYSTACK_PIN_PHONE_OTP:
 		case VERVE: // { 4-4-4-4-3}
 			gaps.add(" ");
 			segmentLengths[0] = 4;
@@ -131,6 +134,7 @@ public class CreditCardUtil {
 			gaps.add(" ");
 			segmentLengths[3] = 4;
 			break;
+
 		default:
 			return enteredNumber;
 		}
@@ -165,6 +169,15 @@ public class CreditCardUtil {
 		switch (type) {
 		case VERVE: //{ 4-4-4-4-3}
 			idx = 19 + 4;
+			break;
+		case PAYSTACK_PIN_ONLY: //{ 4-4-4-4-2}
+			idx = 18 + 4;
+			break;
+		case PAYSTACK_PIN_OTP: //{ 4-4-4-4-3}
+			idx = 19 + 4;
+			break;
+		case PAYSTACK_PIN_PHONE_OTP: //{ 4-4-4-4-1}
+			idx = 17 + 4;
 			break;
 		case VISA:
 		case MASTERCARD:
@@ -267,6 +280,9 @@ public class CreditCardUtil {
 		case DINERS:
 		case JCB:
 		case VERVE:
+		case PAYSTACK_PIN_ONLY:
+		case PAYSTACK_PIN_PHONE_OTP:
+		case PAYSTACK_PIN_OTP:
 		default:
 			return 3;
 		}

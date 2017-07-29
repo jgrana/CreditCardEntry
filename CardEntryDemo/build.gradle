@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -10,6 +11,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 android {
@@ -35,6 +37,6 @@ android {
 }
 
 dependencies {
-    compile project(':CreditCardEntry')
+    compile project(':CardEntry')
     compile 'com.android.support:support-v4:25.3.1'
 }

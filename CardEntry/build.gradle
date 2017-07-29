@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+apply plugin: 'com.android.library'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 25
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs       = ['assets']
+            res.srcDirs          = ['res']
+            aidl.srcDirs         = ['src']
+            resources.srcDirs    = ['src']
+            renderscript.srcDirs = ['src']
+            java.srcDirs         = ['src']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:25.3.1'
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'CardEntry'   // Has to be same as your library module name
+
+    publishedGroupId = 'com.ifiok.cardentry'
+    libraryName = 'CardEntry'
+    artifact = 'CardEntry'     // Has to be same as your library module name
+
+    libraryDescription = 'CardEntry'
+
+    // Your github repo link
+    siteUrl = 'https://github.com/ifiok/CreditCardEntry'
+    gitUrl = 'https://github.com/ifiok/CreditCardEntry.git'
+    githubRepository= 'ifiok/CreditCardEntry'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'ifiok'
+    developerName = 'Ifiok Idiang'
+    developerEmail = 'ifiok.idiang@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
