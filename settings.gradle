@@ -1,2 +1,2 @@
-include ':CreditCardEntry', ':CreditCardEntryDemo'
+include ':CardEntry', ':CardEntryDemo'
 
